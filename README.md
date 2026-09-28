@@ -18,4 +18,4 @@ A modern, responsive CTC (Cost to Company) Salary Calculator for India for Finan
 
 ## Usage
 
-Simply open `index.html` or `ctccalculator.html` in any modern web browser.
+Simply open `index.html` in any modern web browser or deploy directly to GitHub Pages.
