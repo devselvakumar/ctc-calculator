@@ -1,0 +1,892 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: #f6f7f9;
+    color: #111827;
+    line-height: 1.5;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    margin-bottom: 24px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 11px;
+
+    border: 1px solid #dbe3ef;
+
+    background: #ffffff;
+
+    border-radius: 999px;
+
+    color: #4b5563;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CALCULATOR GRID
+========================================================= */
+
+.calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 24px;
+
+    min-width: 0;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.input-label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #374151;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-wrapper {
+    position: relative;
+}
+
+.currency {
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+input,
+select {
+    width: 100%;
+
+    height: 44px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    padding: 0 12px;
+
+    outline: none;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
+}
+
+.currency+input {
+    padding-left: 32px;
+}
+
+input:hover,
+select:hover {
+    border-color: #9ca3af;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+
+/* =========================================================
+   MONTHLY / YEARLY SWITCH
+========================================================= */
+
+.switch-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.switch {
+    display: inline-flex;
+
+    background: #f3f4f6;
+
+    border-radius: 8px;
+
+    padding: 3px;
+}
+
+.switch button {
+    border: none;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    padding: 7px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background .15s ease,
+        color .15s ease,
+        box-shadow .15s ease;
+}
+
+.switch button:hover {
+    color: #111827;
+}
+
+.switch button.active {
+    background: #ffffff;
+
+    color: #111827;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, .08);
+}
+
+
+/* =========================================================
+   GENERATE BUTTON
+========================================================= */
+
+.generate-btn {
+    width: 100%;
+
+    height: 44px;
+
+    margin-top: 16px;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .12s ease;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, .20);
+
+    transform: translateY(-1px);
+}
+
+.generate-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ADVANCED SETTINGS
+========================================================= */
+
+details {
+    margin-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+
+    padding-top: 18px;
+}
+
+summary {
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #374151;
+
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: "+";
+
+    float: right;
+
+    font-size: 18px;
+
+    font-weight: 400;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+.advanced-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 18px;
+}
+
+.field {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   CUSTOM PF
+========================================================= */
+
+.custom-pf-field {
+    display: none;
+
+    grid-column: 1 / -1;
+
+    padding: 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbe3ef;
+
+    border-radius: 8px;
+}
+
+.custom-pf-field.show {
+    display: block;
+}
+
+.help-text {
+    margin-top: 5px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TAX INFO
+========================================================= */
+
+.tax-info {
+    margin-top: 5px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESET BUTTON
+========================================================= */
+
+.reset-btn {
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 10px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        color .15s ease;
+}
+
+.reset-btn:hover {
+    background: #eff6ff;
+
+    border-color: #2563eb;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   RESULT PLACEHOLDER
+========================================================= */
+
+.result-placeholder {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #6b7280;
+}
+
+.placeholder-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.placeholder-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.result-placeholder h3 {
+    color: #374151;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.result-placeholder p {
+    max-width: 300px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+#results {
+    display: none;
+}
+
+#results.show {
+    display: block;
+}
+
+
+/* =========================================================
+   RESULT HIGHLIGHT
+========================================================= */
+
+.result-highlight {
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+
+.result-label {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.result-value {
+    font-size: 32px;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+
+    margin-top: 4px;
+}
+
+.result-sub {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   BREAKDOWN
+========================================================= */
+
+.breakdown-title {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.breakdown {
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+.breakdown-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 10px 13px;
+
+    border-bottom: 1px solid #f0f1f3;
+
+    font-size: 13px;
+}
+
+.breakdown-row:last-child {
+    border-bottom: none;
+}
+
+.breakdown-row span:first-child {
+    color: #6b7280;
+}
+
+.breakdown-row span:last-child {
+    color: #111827;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.breakdown-row.total {
+    background: #f9fafb;
+}
+
+.breakdown-row.total span:first-child {
+    color: #111827;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MONTHLY BOX
+========================================================= */
+
+.monthly-box {
+    margin-top: 20px;
+}
+
+.monthly-box .breakdown {
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   ACTION BUTTON AREA
+========================================================= */
+
+.calculator-actions {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.action-btn {
+    height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color .18s ease,
+        border-color .18s ease,
+        color .18s ease,
+        box-shadow .18s ease,
+        transform .12s ease;
+}
+
+.action-btn svg {
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+}
+
+.action-btn:hover:not(:disabled) {
+    background: #eff6ff;
+
+    border-color: #2563eb;
+
+    color: #2563eb;
+
+    box-shadow:
+        0 2px 6px rgba(37, 99, 235, .10);
+
+    transform: translateY(-1px);
+}
+
+.action-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.action-btn.primary {
+    background: #2563eb;
+
+    border-color: #2563eb;
+
+    color: #ffffff;
+}
+
+.action-btn.primary:hover:not(:disabled) {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    color: #ffffff;
+}
+
+.action-btn:disabled {
+    opacity: .45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.calculator-note {
+    max-width: 760px;
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .container {
+        padding: 25px 14px 40px;
+    }
+
+    .header-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .calculator {
+        grid-template-columns: 1fr;
+    }
+
+    .advanced-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .custom-pf-field {
+        grid-column: auto;
+    }
+
+    .result-placeholder {
+        min-height: 350px;
+    }
+
+    .result-value {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .switch-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .switch {
+        width: 100%;
+    }
+
+    .switch button {
+        flex: 1;
+    }
+
+    .action-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+
+    .calculator-actions {
+        padding: 16px;
+    }
+
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

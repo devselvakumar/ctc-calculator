@@ -11,10 +11,19 @@ A modern, responsive CTC (Cost to Company) Salary Calculator for India for Finan
   - Employer & Employee Provident Fund (EPF) with wage ceiling options
   - Gratuity provisions & Professional Tax
 - **Professional Reports:**
-  - **Download PDF:** Clean, single-page salary report with Indian number formatting (`Rs 1,20,00,000`), proper margins, and official watermark.
+  - **Download PDF:** Clean, single-page salary report with Indian number formatting (`Rs 1,20,000`), proper margins, and watermark.
   - **Download Excel / CSV:** Detailed salary breakdown export.
   - Built-in 15-second countdown with preserved data snapshots.
+- **Share Results:** Native share sheet or clipboard copy via URL parameters.
 - **Responsive UI:** Clean, modern interface designed for desktop and mobile devices.
+
+## Project Structure
+
+```
+├── index.html   # HTML structure
+├── style.css    # All styles
+└── script.js    # Calculator logic, PDF & Excel export
+```
 
 ## Usage
 
